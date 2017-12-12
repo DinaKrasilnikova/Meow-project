@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MeowApp.Models;
 
 namespace MeowApp.Controllers
 {
@@ -25,6 +26,17 @@ namespace MeowApp.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult WordCount()
+        {
+            return PartialView();
+        }
+
+        public ActionResult MeowCount(string inputString)
+        {
+            int result = MeowModel.MeowCount(inputString);
+            return PartialView((object)result.ToString());
         }
     }
 }

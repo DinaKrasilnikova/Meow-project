@@ -4,31 +4,31 @@
 
 <div class="jumbotron">
     <h1>WOW-MEOW</h1>
-    
+
 </div>
 
 <div class="row">
     <div class="col-md-6">
-        <h2><font color=#08088A>Do you like cats as much as I am?</font></h2>
         <p>
             <img src="https://lh3.googleusercontent.com/4-C1kDS1FuMp9i2tr7v8H8IgkunG22nIo9bSm6ldq5N392HcPDHL0MY7xK3SWfQzxwI=h310">
         </p>
     </div>
-    <br/>
+    <br />
     <div class="col-md-6">
-        <table width="100%">
-            <tr>
-                <td width="50%">
-                    <p>
-                        <input type="submit" value="Yes!" />
-                    </p>
-                </td>
-                <td width="50%">
-                    <p>
-                        <input type="submit" value="No..." />
-                    </p>
-                </td>
-            </tr>
-        </table>
+        <p>
+            <input type="submit" value="Meow!" />
+        </p>
+        @using (Ajax.BeginForm("MeowCount", new AjaxOptions { UpdateTargetId = "resultC" }))
+        {
+            <p>
+                <textarea name="inputString" cols="50" rows="10"></textarea>
+                <br />
+                <input class="btn btn-default" type="submit" value="Count meow in text" />
+            </p>
+        }
+        <h3>Meow:</h3>
+        <div id="resultC"></div>
     </div>
 </div>
+@Scripts.Render("~/scripts/jquery-3.2.1.min.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")
