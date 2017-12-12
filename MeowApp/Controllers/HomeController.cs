@@ -30,7 +30,9 @@ namespace MeowApp.Controllers
 
         public ActionResult WordCount()
         {
-            return PartialView();
+            ViewBag.Message = "It's a meow time";
+
+            return View();
         }
 
         public ActionResult MeowCount(string inputString)

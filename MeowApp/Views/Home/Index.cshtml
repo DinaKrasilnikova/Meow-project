@@ -16,17 +16,19 @@
     <br />
     <div class="col-md-6">
         <p>
-            <input type="submit" value="Meow!" />
+            <input class="btn btn-default" type="submit" value="Meow?" onclick="alert('MEOW!')" />
         </p>
         @using (Ajax.BeginForm("MeowCount", new AjaxOptions { UpdateTargetId = "resultC" }))
-        {
-            <p>
-                <textarea name="inputString" cols="50" rows="10"></textarea>
-                <br />
-                <input class="btn btn-default" type="submit" value="Count meow in text" />
-            </p>
-        }
+    {
+        <p>
+            <textarea name="inputString" cols="50" rows="10"></textarea>
+            <br />
+            <input class="btn btn-default" type="submit" value="Count meow in text" />
+        </p>
+}
         <h3>Meow:</h3>
         <div id="resultC"></div>
     </div>
 </div>
+@Scripts.Render("~/scripts/jquery-3.2.1.min.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")
